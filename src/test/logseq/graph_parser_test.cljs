@@ -36,7 +36,7 @@
   (let [graph-dir "src/test/docs"
         _ (docs-graph-helper/clone-docs-repo-if-not-exists graph-dir)
         files (docs-graph-helper/build-graph-files graph-dir)
-        conn (gp-db/start-conn) 
+        conn (gp-db/start-conn)
         ; _ (repo-handler/parse-files-and-load-to-db! test-helper/test-db files {:re-render? false})
         _ (graph-parser/parse conn files)
         db @conn]
